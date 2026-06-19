@@ -86,6 +86,7 @@ export default function Form({dataUsers,setDataUser}){
                                 <option >Đang diễn ra</option>
                                 <option >Sắp diễn ra</option>
                                 <option >Đã Hủy</option>
+                                <option >Hoàn thành</option>
                             </select>
                         </div>
                     </div>

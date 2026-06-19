@@ -11,7 +11,7 @@ function App() {
   return (
     <>
         <Header></Header>
-        <Status></Status>
+        <Status dataUsers = {dataUsers}></Status>
         <div className = "gap-3 mt-4">
           <Form dataUsers = {dataUsers} setDataUser = {setDataUser}></Form>
           <Table dataUsers = {dataUsers}></Table>
