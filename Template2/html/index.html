@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đề minh họa 4</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <header class="d-flex  algin-items-center border px-4 py-2 rounded-3 mb-3"
+        style="border: solid 1px var(--secondary-color)">
+        <div class="d-flex align-items-center gap-2 col-6">
+            <p class="m-0 p-3 border border-2 rounded-3 border-dark fw-bold">TLU</p>
+            <div>
+                <h3>Quản lý hoạt động ngoại khóa</h3>
+                <p>Đăng kí và theo dõi hoạt động sinh viên</p>
+            </div>
+        </div>
+
+        <div class="d-flex align-items-center justify-content-around col-6">
+            <p class="fw-bold border rounded-3 px-3 py-1"
+                style="border: solid 1px var(--secondary-color); background-color: #f0f0f0">
+                Hoạt động</p>
+            <p>Sinh viên</p>
+            <p>Lịch trình</p>
+            <p>Thống kê</p>
+        </div>
+    </header>
+
+    <div class="d-flex mt-3 ms-3 me-3 gap-3">
+        <div class="border rounded-3 align-middle text-center flex-fill"
+            style="border: 1px solid var(--secondary-color)">
+            <p class="fw-bold">5</p>
+            <p class="text-muted">Tổng hoạt động</p>
+        </div>
+        <div class="border rounded-3 align-middle text-center flex-fill"
+            style="border: 1px solid var(--secondary-color)">
+            <p class="fw-bold">2</p>
+            <p class="text-muted">Sắp diễn ra</p>
+        </div>
+        <div class="border rounded-3 align-middle text-center flex-fill "
+            style="border: 1px solid var(--secondary-color)">
+            <p class="fw-bold">3</p>
+            <p class="text-muted">Hoàn thành</p>
+        </div>
+    </div>
+
+    <main class=" gap-3 mt-4">
+
+        <div class="flex-fill border rounded-3 ">
+            <div class="p-3 rounded-top-3 " style="background-color: #f0f0f0">
+                <h3>Đăng ký hoạt động mới</h3>
+                <p class="text-muted ">Nhập thông tin hoạt động</p>
+            </div>
+
+            <form class="mt-3 px-3" onSubmit={handleSubmit}>
+
+                <div class="d-flex gap-3">
+                    <div class="flex-fill">
+                        <div class = "mb-3">
+                            <label class="fw-bold">Tên hoạt động</label>
+                            <input type="text" placeholder="Nhập tên hoạt động" class="form-control">
+                        </div>
+
+                        <div>
+                            <label class="fw-bold">Hình thức</label>
+                            <div class="d-flex gap-3">
+                                <div>
+                                    <label for="">Trực tiếp</label>
+                                    <input type="radio" placeholder="Nhập tên hoạt động" class="form-check-input"
+                                        name="hinhThuc">
+                                </div>
+                                <div>
+                                    <label for="">Trực tuyến</label>
+                                    <input type="radio" placeholder="Nhập tên hoạt động" class="form-check-input"
+                                        name="hinhThuc">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex-fill">
+                        <div class = "mb-3">
+                            <label class="fw-bold">Câu lạc bộ</label>
+                            <select class="form-select">
+                                <option value="" disabled selected>Chọn câu lạc bộ</option>
+                                <option value="">CLB IT</option>
+                                <option value="">CLB ABC</option>
+                                <option value="">CLB XYZ</option>
+                            </select>
+                        </div>
+
+                        <div class = "mb-3">
+                            <label class="fw-bold">Trạng thái</label>
+                            <select class="form-select">
+                                <option value="" disabled selected>Trạng thái</option>
+                                <option value="">CLB IT</option>
+                                <option value="">CLB ABC</option>
+                                <option value="">CLB XYZ</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <button class = "bg-dark text-white btn mb-3">Thêm hoạt động</button>
+
+            </form>
+        </div>
+
+
+
+
+        <div class="flex-fill border rounded-3 mt-3">
+            <div class="p-3 rounded-top-3 mb-3 " style=" background-color: #f0f0f0">
+                <h3>Danh sách hoạt động</h3>
+                <p class="text-muted ">Tìm kiếm và lọc theo trạng thái</p>
+            </div>
+
+            <div class="d-flex justify-content-between px-3 py-2">
+                <input type="text" placeholder="Tìm tên hoạt động,CLB..." class="form-control flex-fill w-auto" />
+
+                <div class="d-flex flex-fill justify-content-end gap-3">
+                    <button class="btn border bg-dark text-white">Tất cả</button>
+                    <button class="btn border">Sắp diễn ra</button>
+                    <button class="btn border">Đang giao</button>
+                    <button class="btn border">Đã giao</button>
+                </div>
+            </div>
+
+            <table class="table mt-4">
+                <thead>
+                    <tr>
+                        <th style=" background-color: #f0f0f0">#</th>
+                        <th style=" background-color: #f0f0f0">Hoạt động</th>
+                        <th style=" background-color: #f0f0f0">Câu bộ</th>
+                        <th style=" background-color: #f0f0f0">Hình thức</th>
+                        <th style=" background-color: #f0f0f0">Trạng thái</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td>1</td>
+                        <td>Hackathon 2026</td>
+                        <td>CLB IT</td>
+                        <td>Trực tiếp</td>
+                        <td>
+                            <button class="btn border border-dark">Sắp diễn ra</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>1</td>
+                        <td>Hackathon 2026</td>
+                        <td>CLB IT</td>
+                        <td>Trực tiếp</td>
+                        <td>
+                            <button class="btn border border-dark">Sắp diễn ra</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>1</td>
+                        <td>Hackathon 2026</td>
+                        <td>CLB IT</td>
+                        <td>Trực tiếp</td>
+                        <td>
+                            <button class="btn border border-dark">Sắp diễn ra</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>1</td>
+                        <td>Hackathon 2026</td>
+                        <td>CLB IT</td>
+                        <td>Trực tiếp</td>
+                        <td>
+                            <button class="btn border border-dark">Sắp diễn ra</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>1</td>
+                        <td>Hackathon 2026</td>
+                        <td>CLB IT</td>
+                        <td>Trực tiếp</td>
+                        <td>
+                            <button class="btn border border-dark">Sắp diễn ra</button>
+                        </td>
+                    </tr>
+
+
+
+                    
+
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+
+    <footer class = "border border-2 rounded-3 d-flex justify-content-between p-4">
+        <div>
+            <span class = "fw-bold">CSE391</span>
+            <span >Layout dọc mẫu đầy (đủ thành phần)</span>
+        </div>
+
+        <div>
+            <span>Họ và tên: Nguyễn Duy Kiên</span>
+            <span>| Mã Sinh Viên: 2451160799</span>
+        </div>
+    </footer>
+</body>
+
+</html>
