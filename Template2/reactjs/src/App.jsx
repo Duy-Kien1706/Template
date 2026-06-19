@@ -5,6 +5,7 @@ import Status from './components/Status'
 import Form from './components/Form'
 import Table from "./components/Table"
 import data from "./data/data"
+import Footer from './components/Footer'
 function App() {
 
   const [dataUsers,setDataUser] = useState(data);
@@ -16,6 +17,7 @@ function App() {
           <Form dataUsers = {dataUsers} setDataUser = {setDataUser}></Form>
           <Table dataUsers = {dataUsers}></Table>
         </div>
+        <Footer></Footer>
     </>
   )
 }
